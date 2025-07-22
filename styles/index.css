@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+
+  box-sizing: border-box;
+}
+
+@keyframes banner-right-animation {
+  0% {
+    opacity: 0;
+    transform: translate(-30px);
+  }
+  50% {
+    opacity: o.5;
+    transform: translate(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+
+@keyframes banner-left-h2-animation {
+  0% {
+    opacity: 0.1;
+    transform: translate(-30px);
+  }
+  50% {
+    opacity: o.5;
+    transform: translate(-20px);
+    color: bisque;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+    color: aliceblue;
+  }
+}
+
+@keyframes banner-right-p-animation {
+  0% {
+    opacity: 0.1;
+    transform: translate(-30px);
+  }
+  50% {
+    opacity: o.5;
+    transform: translate(-20px);
+    color: lightslategray;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+    color: cadetblue;
+  }
+}
+
+@keyframes banner-left-btn-animation {
+  0% {
+    opacity: 0.1;
+    transform: translate(-30px);
+    background-color: white;
+  }
+  50% {
+    opacity: o.5;
+    transform: translate(-20px);
+    background-color: rgb(223, 218, 96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+    background-color: rgb(174, 60, 25);
+  }
+}
+
+/* common styles */
+
+.btn {
+  background-color: red;
+  color: aliceblue;
+  font-size: 20px;
+  width: 195px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+}
+.btn:hover {
+  background-color: lightslategray;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+/* banner section */
+.banner-section {
+  max-width: 1200px;
+  margin: 30px auto;
+  height: 600px;
+  background-color: black;
+  padding: 20px;
+
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+}
+
+.banner-left {
+  width: 70%;
+}
+.banner-left h2 {
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 70px;
+  color: bisque;
+
+  animation: banner-left-h2-animation 2s;
+}
+.banner-left p {
+  margin: 20px 0;
+  color: burlywood;
+
+  animation: banner-right-p-animation 2s;
+}
+
+.upcoming-matches-left .btn:nth-child(1),
+.upcoming-matches-left .btn:nth-child(2) {
+  background-color: aliceblue;
+  color: black;
+}
+
+.banner-right img {
+  width: 100%s;
+  animation: banner-right-animation 5s ease-out infinite;
+}
+
+/* main section  */
+
+.upcoming-matches {
+  display: flex;
+
+  margin: 0 160px 0 160px;
+  gap: 25px;
+}
+
+.upcoming-matches-left {
+  background-color: black;
+  width: 25%;
+
+  padding: 25px;
+  border-radius: 15px;
+  height: fit-content;
+  display: flex;
+
+  gap: 15px;
+  flex-direction: column;
+}
+
+.upcoming-matches-right .card img {
+  height: 175px;
+  max-width: 100%;
+}
+
+.upcoming-matches-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.upcoming-matches-right .card img {
+  border-radius: 10px;
+  animation: banner-right-animation 5s ease-out infinite;
+}
+
+/* footer section  */
+.footer {
+  background-color: black;
+  color: bisque;
+  text-align: center;
+  height: 500px;
+  margin: 200px 0 0 0;
+  padding: 200px;
+}
+.footer-description {
+  margin: 20px 0;
+}
+.email-option {
+  height: 51px;
+  width: 300px;
+  border-radius: 8px;
+  border: none;
+  padding: 20px;
+}
+
+/* Responsive for Tab */
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .banner-section {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0;
+  }
+  .banner-left h2 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .upcoming-matches {
+    margin: 0 40px;
+    flex-direction: column;
+  }
+  .upcoming-matches-left {
+    width: 100%;
+    flex-direction: row;
+    background-color: transparent;
+  }
+  .banner-right img {
+    width: 100%;
+  }
+  .footer {
+    text-align: center;
+    padding: 100px;
+    height: 400px;
+  }
+  .footer-title {
+    font-size: 20px;
+  }
+  .footer-description {
+    font-size: 10px;
+  }
+  .footer-box {
+    display: flex;
+  }
+  .email-option {
+    margin-left: 30px;
+  }
+}
+
+/* banner media query for mobile */
+
+@media screen and (max-width: 576px) {
+  .banner-section {
+    border-radius: 0;
+    flex-direction: column-reverse;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  .banner-right img {
+    max-width: 100%;
+  }
+  .banner-left h2 {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 50px;
+  }
+  .upcoming-matches {
+    flex-direction: column;
+    margin: 50px;
+  }
+  .upcoming-matches-left {
+    width: fit-content;
+    padding: 10px;
+  }
+  .upcoming-matches-right {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .btn:hover {
+    background-color: lightslategray;
+    transition: 0.1s ease-in;
+    cursor: pointer;
+  }
+  .footer {
+    padding: 60px 20px 0 20px;
+    height: 300px;
+  }
+  .footer-title {
+    font-size: 15px;
+  }
+  .footer-description {
+    font-size: 10px;
+  }
+  .footer-box {
+    display: flex;
+  }
+  .email-option {
+    width: 300px;
+    height: 30px;
+    font: 12px;
+  }
+  .footer-box .btn {
+    width: 80px;
+    height: 40px;
+    font-size: 12px;
+  }
+}
